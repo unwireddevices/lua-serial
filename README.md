@@ -14,15 +14,13 @@ For timing functions requires function os.delay_us(us) (in ul_time module).
   
 ## Examples:
 * Get list of available ports: `ports = io.Serial:getPorts()`
-  After calling getPorts() list of system ports stored to io.Serial.ports variable: `ports = io.Serial.ports`
+* After calling getPorts() list of system ports stored to io.Serial.ports variable: `ports = io.Serial.ports`
 * Open port and set parameters. Port can be port's name or number (starting at 1):
-		`p = io.Serial{port='/dev/ttyUSB0', baud=9600,bits=8,stops=0,parity='n'}`
-    or
-    	`p = io.Serial:open{5}:baud(1200):bits(8):stops(2):parity('e'):DTR(0):RTS(1)`
+  * `p = io.Serial{port='/dev/ttyUSB0', baud=9600,bits=8,stops=0,parity='n'}`
+  * or `p = io.Serial:open{5}:baud(1200):bits(8):stops(2):parity('e'):DTR(0):RTS(1)`
 * Set parameters:
-        `p:config{baud=1200,bits=8,stops=2,parity='e',DTR=0,RTS=1}`
-    or using method chaining:
-        `p:baud(1200):bits(8):stops(2):parity('e'):DTR(0):RTS(1)`
+  * `p:config{baud=1200,bits=8,stops=2,parity='e',DTR=0,RTS=1}`
+  * or using method chaining: `p:baud(1200):bits(8):stops(2):parity('e'):DTR(0):RTS(1)`
 * Transmit string of bytes: `p:write(string)`
 * Wait all data to send: `p:drainTX()` or `p:waitTX()`
 * Get number of bytes waiting in receive buffer: `avail = p:availRX()`
