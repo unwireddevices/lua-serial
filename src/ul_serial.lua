@@ -222,12 +222,12 @@ io.Serial = {
     flush = function(self)
         self:flushTX():flushRX()
     end,
-    -- wait until reception of nb bytes, waiting tout time (in 100-microsecond units)
+    -- wait until reception of nb bytes, waiting tout time (milliseconds)
     --   returns remaining timeout counter, == 0 if timeout occured.
     waitRX = function(self, nb, tout)
         if not tout then tout = self.rxTout end -- use default timeout
         while (self:availRX() < nb) and (tout > 0) do
-            self.del_us(100)
+            self.del_us(1000)
             tout = tout - 1
         end
         return tout

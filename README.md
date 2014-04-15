@@ -23,15 +23,16 @@ For timing functions requires function os.delay_us(us) (in ul_time module).
   * or using method chaining: `p:baud(1200):bits(8):stops(2):parity('e'):DTR(0):RTS(1)`
 * Get number of bytes waiting in receive buffer: `n = p:available()`
 * Read all received data (as string): `p:read()`
-* Transmit string of bytes: `p:write(string)`
-* Wait all data to send: `p:drainTX()` or `p:waitTX()`
-* Wait for reception of at least 64 bytes, with 100-millisecond timeout (timeout value in 100-microsecond increments):
+* Wait for reception of at least 64 bytes, with 100ms timeout, receive data on success:
 ```lua
-    tout = p:waitRX(64, 1000)
-    if tout == 0 then
+    to = p:waitRX(64, 100)
+    if to == 0 then
     	print('Timeout occured...')
+	else
+		data = p:read()
 	end
 ```
-* Get received data: `data = p:read()`
+* Transmit string of bytes: `p:write(string)`
+* Wait all data to send: `p:drainTX()` or `p:waitTX()`
 * Close port: `p:close()`
 
