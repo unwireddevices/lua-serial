@@ -204,6 +204,9 @@ io.Serial = {
     availRX = function(self)
         return io._serial.availRX(self.pd)
     end,
+    available = function(self)
+        return io._serial.availRX(self.pd)
+    end,
     
     -- flush RX buffer
     flushRX = function(self)

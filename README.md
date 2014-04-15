@@ -21,7 +21,7 @@ For timing functions requires function os.delay_us(us) (in ul_time module).
 * Set parameters:
   * `p:config{baud=1200,bits=8,stops=2,parity='e',DTR=0,RTS=1}`
   * or using method chaining: `p:baud(1200):bits(8):stops(2):parity('e'):DTR(0):RTS(1)`
-* Get number of bytes waiting in receive buffer: `avail = p:availRX()`
+* Get number of bytes waiting in receive buffer: `n = p:available()`
 * Read all received data (as string): `p:read()`
 * Transmit string of bytes: `p:write(string)`
 * Wait all data to send: `p:drainTX()` or `p:waitTX()`
