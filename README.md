@@ -2,6 +2,9 @@ ul_serial
 =========
 
 Lua serial port library
+
+Donate: ** Paypal edartuz@gmail.com **
+
   
 Serial port communication functions for Lua.
 For timing functions requires function os.delay_us(us) (in ul_time module).
