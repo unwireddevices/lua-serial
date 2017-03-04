@@ -5,14 +5,10 @@ Lua serial port library
   
 Serial port communication functions for Lua.
 For timing functions requires function os.delay_us(us) (in ul_time module).
-  
-* Compilation with gcc (Linux) or MinGW-gcc (Windows):
-  * `make`
-* Cross-compilation in Linux:
-  * 32-bit target: `make COMSPEC=command`
-  * 64-bit target: `make COMSPEC=command PROCESSOR_ARCHITECTURE=AMD64 CPU=k8`
-  
+
+
 ## Examples:
+* Include library: `require("ul_serial")`
 * Get list of available ports: `ports = io.Serial:getPorts()`
 * After calling getPorts() list of system ports stored to io.Serial.ports variable: `ports = io.Serial.ports`
 * Open port and set parameters. Port can be port's name or number (starting at 1):
