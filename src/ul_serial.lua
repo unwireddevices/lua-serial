@@ -32,6 +32,7 @@ Examples:
 
 -- load binary module
 io._serial = require'_ul_serial'
+ul_time = require("ul_time")
 
 -- serial port class
 io.Serial = {
