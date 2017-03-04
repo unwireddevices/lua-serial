@@ -3,10 +3,6 @@ MAIN := _ul_serial
 DIR_SRC   := ./src
 DIR_BUILD := ./build
 
-ifndef $(CPU)
-	CPU       := pentium3
-endif
-
 ifndef COMSPEC
 	# posix
 	DIR_SEP := :
