@@ -3,10 +3,6 @@ MAIN := _ul_serial
 DIR_SRC   := ./src
 DIR_BUILD := ./build
 
-ifndef $(CPU)
-	CPU       := 34kc
-endif
-
 ifndef COMSPEC
 	# posix
 	DIR_SEP := :
@@ -60,7 +56,7 @@ CC := $(CC_PREFIX)gcc
 AR := $(CC_PREFIX)ar
 RM := rm -f
 
-CFLAGS := $(CFLAGS) -std=gnu99 -Os -g $(INCLUDE_DIRS) -mtune=$(CPU) -ffunction-sections -fdata-sections
+CFLAGS := $(CFLAGS) -std=gnu99 -Os -g $(INCLUDE_DIRS) -ffunction-sections -fdata-sections
 LFLAGS := $(LFLAGS) $(LIB_DIRS)
 WFLAGS := $(WFLAGS) -Wall
 
